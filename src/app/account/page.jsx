@@ -27,26 +27,18 @@ const TABS = ["My Account", "Orders", "Profile Information", "Password", "Addres
 /* ---------- shared bits ---------- */
 
 function SectionHeading({ children }) {
-  return (
-    <h2 className="font-serif text-[18px] tracking-tight text-stone-900 pb-2 border-b-2 border-[#b08d57] inline-block">
-      {children}
-    </h2>
-  );
+  return <h2 className="rs-heading">{children}</h2>;
 }
 
 function Placeholder({ label }) {
-  return (
-    <div className="w-16 h-16 shrink-0 bg-stone-100 border border-stone-200 flex items-center justify-center text-[9px] text-stone-400 text-center leading-tight">
-      {label}
-    </div>
-  );
+  return <div className="rs-orderImg">{label}</div>;
 }
 
 function Row({ label, value }) {
   return (
-    <div className="flex gap-2 py-1">
-      <dt className="font-semibold w-40 shrink-0 text-stone-900">{label}</dt>
-      <dd className="text-stone-600">{value}</dd>
+    <div className="rs-profileRow">
+      <dt className="rs-profileLabel">{label}</dt>
+      <dd className="rs-profileValue">{value}</dd>
     </div>
   );
 }
@@ -54,13 +46,13 @@ function Row({ label, value }) {
 function Field({ label, value, onChange, placeholder, type = "text" }) {
   return (
     <div>
-      <label className="block text-[13px] mb-1 text-stone-700">{label}</label>
+      <label className="rs-fieldLabel">{label}</label>
       <input
         type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full border-0 border-b border-stone-300 pb-2 text-[13px] bg-transparent outline-none focus:border-[#1f4a3f] transition-colors"
+        className="rs-textInput"
       />
     </div>
   );
@@ -69,11 +61,11 @@ function Field({ label, value, onChange, placeholder, type = "text" }) {
 function SelectField({ label, value, onChange, options }) {
   return (
     <div>
-      <label className="block text-[13px] mb-1 text-stone-700">{label}</label>
+      <label className="rs-fieldLabel">{label}</label>
       <select
         value={value}
         onChange={onChange}
-        className="w-full appearance-none border-0 border-b border-stone-300 pb-2 text-[13px] bg-transparent outline-none focus:border-[#1f4a3f] transition-colors"
+        className="rs-textInput rs-selectInput"
       >
         {options.map((o) => (
           <option key={o} value={o}>
@@ -87,10 +79,7 @@ function SelectField({ label, value, onChange, options }) {
 
 function PrimaryButton({ children, className = "", ...props }) {
   return (
-    <button
-      className={`bg-[#1f4a3f] text-white px-6 py-3 text-[13px] tracking-wider hover:bg-[#163a31] transition-colors ${className}`}
-      {...props}
-    >
+    <button className={`rs-btnPrimary ${className}`} {...props}>
       {children}
     </button>
   );
@@ -98,10 +87,7 @@ function PrimaryButton({ children, className = "", ...props }) {
 
 function OutlineButton({ children, className = "", ...props }) {
   return (
-    <button
-      className={`border border-stone-400 px-6 py-3 text-[13px] tracking-wider hover:bg-stone-50 transition-colors ${className}`}
-      {...props}
-    >
+    <button className={`rs-btnOutline ${className}`} {...props}>
       {children}
     </button>
   );
@@ -111,22 +97,18 @@ function OutlineButton({ children, className = "", ...props }) {
 
 function Sidebar({ active, onSelect }) {
   return (
-    <div className="w-full sm:w-64 shrink-0 border border-stone-200">
+    <div className="rs-sidebar">
       {TABS.map((tab) => (
         <button
           key={tab}
           onClick={() => onSelect(tab)}
-          className={`w-full flex items-center justify-between px-4 py-3 text-[13px] border-b border-stone-200 last:border-b-0 text-left transition-colors ${
-            active === tab
-              ? "bg-[#1f4a3f] text-white hover:bg-[#1f4a3f]"
-              : "bg-white text-stone-700 hover:bg-stone-50"
-          }`}
+          className={`rs-sideBtn ${active === tab ? "rs-sideActive" : ""}`}
         >
-          {tab} <span className="text-[15px] leading-none">›</span>
+          {tab} <span>›</span>
         </button>
       ))}
-      <div className="p-4">
-        <OutlineButton className="w-full">LOG OUT</OutlineButton>
+      <div className="rs-logoutWrap">
+        <OutlineButton className="rs-btnFull">LOG OUT</OutlineButton>
       </div>
     </div>
   );
@@ -136,28 +118,28 @@ function Sidebar({ active, onSelect }) {
 
 function OrderCard({ order, statusLabel, ctaLabel = "TRACK ORDER", ctaVariant = "primary" }) {
   return (
-    <div className="flex flex-col sm:flex-row gap-4">
+    <div className="rs-orderRow">
       <Placeholder label="Earring photo" />
-      <div className="flex-1">
-        <div className="flex flex-wrap items-start justify-between gap-1">
-          <p className="font-serif text-[14px] text-stone-900">{order.name}</p>
-          <span className="text-[11px] font-semibold text-[#1f4a3f]">{statusLabel}</span>
+      <div className="rs-orderInfo">
+        <div className="rs-orderTop">
+          <p className="rs-orderName">{order.name}</p>
+          <span className="rs-orderStatus">{statusLabel}</span>
         </div>
-        <p className="text-[11px] text-stone-500 mt-1">{order.description}</p>
-        <div className="flex flex-wrap gap-6 mt-2 text-[11px]">
-          <span className="font-semibold text-stone-900">{order.price}</span>
-          <span className="text-stone-600">QTY : {order.qty}</span>
+        <p className="rs-orderDesc">{order.description}</p>
+        <div className="rs-orderMetaInline">
+          <span className="rs-bold">{order.price}</span>
+          <span className="rs-muted">QTY : {order.qty}</span>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-3">
-          <div className="flex flex-wrap gap-x-6 gap-y-1 text-[11px] text-stone-500">
-            <span>Order ID : {order.orderId}</span>
-            <span>Date : {order.date}</span>
-            <span>Payment: {order.payment}</span>
+        <div className="rs-orderFooter">
+          <div className="rs-orderMeta">
+            <span className="rs-muted">Order ID : {order.orderId}</span>
+            <span className="rs-muted">Date : {order.date}</span>
+            <span className="rs-orderPayment">Payment: {order.payment}</span>
           </div>
           {ctaVariant === "primary" ? (
-            <PrimaryButton className="!px-4 !py-2 shrink-0">{ctaLabel} ›</PrimaryButton>
+            <PrimaryButton className="rs-btnAuto">{ctaLabel} ›</PrimaryButton>
           ) : (
-            <OutlineButton className="!px-4 !py-2 shrink-0">{ctaLabel} ›</OutlineButton>
+            <OutlineButton className="rs-btnAuto">{ctaLabel} ›</OutlineButton>
           )}
         </div>
       </div>
@@ -169,27 +151,25 @@ function OrderCard({ order, statusLabel, ctaLabel = "TRACK ORDER", ctaVariant = 
 
 function MyAccountView({ hasOrder }) {
   return (
-    <div className="flex-1 min-w-0">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="rs-content">
+      <div className="rs-rowBetween">
         <SectionHeading>Recent Order</SectionHeading>
-        {!hasOrder && <OutlineButton className="!px-4 !py-2">CONTINUE SHOPPING</OutlineButton>}
+        {!hasOrder && <OutlineButton className="rs-btnAuto">CONTINUE SHOPPING</OutlineButton>}
       </div>
 
       {!hasOrder ? (
-        <p className="text-[13px] text-stone-500 mt-4 pb-6 border-b border-stone-200">
-          You do not have any recent orders.
-        </p>
+        <p className="rs-emptyText rs-mt10 rs-bottomBorder">You do not have any recent orders.</p>
       ) : (
-        <div className="border border-stone-200 p-4 mt-4 mb-10">
+        <div className="rs-orderBox rs-mt10 rs-mb32">
           <OrderCard order={ORDER} statusLabel={`Estimate Delivery : ${ORDER.date.split(",")[0]}`} />
         </div>
       )}
 
-      <div className="flex items-center justify-between mt-10 mb-3">
+      <div className="rs-rowBetween rs-mt32 rs-mb12">
         <SectionHeading>Profile</SectionHeading>
-        <button className="text-[11px] underline underline-offset-2 text-stone-700">EDIT PROFILE</button>
+        <button className="rs-linkBtn">EDIT PROFILE</button>
       </div>
-      <dl className="text-[13px] pb-6 border-b border-stone-200">
+      <dl className="rs-profileList rs-bottomBorder">
         <Row label="Name" value={USER.name} />
         <Row label="Email" value={USER.email} />
         <Row label="Phone" value={USER.phone} />
@@ -199,11 +179,11 @@ function MyAccountView({ hasOrder }) {
         <Row label="Anniversary Date" value={USER.anniversary} />
       </dl>
 
-      <div className="flex items-center justify-between mt-10 mb-3">
+      <div className="rs-rowBetween rs-mt32 rs-mb12">
         <SectionHeading>Address Book</SectionHeading>
-        <button className="text-[11px] underline underline-offset-2 text-stone-700">ADD ADDRESS</button>
+        <button className="rs-linkBtn">ADD ADDRESS</button>
       </div>
-      <p className="text-[13px] text-stone-500">You do not have any stored addresses.</p>
+      <p className="rs-emptyText">You do not have any stored addresses.</p>
     </div>
   );
 }
@@ -218,13 +198,13 @@ function OrdersView() {
   ];
 
   return (
-    <div className="flex-1 min-w-0">
-      <div className="mb-5">
+    <div className="rs-content">
+      <div className="rs-mb16">
         <SectionHeading>Orders</SectionHeading>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="rs-ordersList">
         {orders.map((order, i) => (
-          <div key={i} className="border border-stone-200 p-4">
+          <div key={i} className="rs-orderBox">
             <OrderCard order={order} statusLabel={order.statusLabel} ctaLabel={order.cta} ctaVariant={order.variant} />
           </div>
         ))}
@@ -249,11 +229,11 @@ function ProfileInformationView() {
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
   return (
-    <div className="flex-1 min-w-0">
-      <div className="mb-8">
+    <div className="rs-content">
+      <div className="rs-mb32">
         <SectionHeading>Profile Information</SectionHeading>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 max-w-2xl">
+      <div className="rs-formGrid rs-maxW">
         <Field label="First name*" value={form.firstName} onChange={update("firstName")} />
         <SelectField label="Country*" value={form.country} onChange={update("country")} options={["India", "United States"]} />
         <Field label="Last name*" value={form.lastName} onChange={update("lastName")} />
@@ -268,7 +248,7 @@ function ProfileInformationView() {
         />
         <SelectField label="Gender (Optional)" value={form.gender} onChange={update("gender")} options={["Male", "Female", "Other"]} />
       </div>
-      <PrimaryButton className="mt-10">SAVE</PrimaryButton>
+      <PrimaryButton className="rs-mt10">SAVE</PrimaryButton>
     </div>
   );
 }
@@ -280,12 +260,12 @@ function PasswordView() {
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
   return (
-    <div className="flex-1 min-w-0 max-w-md">
-      <div className="mb-8">
+    <div className="rs-content rs-narrow">
+      <div className="rs-mb32">
         <SectionHeading>Password</SectionHeading>
       </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="rs-passwordFields">
         <Field type="password" label="Old Password*" value={form.old} onChange={update("old")} placeholder="Enter your old password" />
         <Field type="password" label="New Password*" value={form.next} onChange={update("next")} placeholder="Enter your new password" />
         <Field
@@ -297,7 +277,7 @@ function PasswordView() {
         />
       </div>
 
-      <div className="text-[11px] text-stone-500 flex flex-col gap-1 mt-6 mb-8">
+      <div className="rs-rulesText rs-mt24 rs-mb32">
         <p>✓ A minimum of 8 character(s) &nbsp; ✓ A minimum of 1 number</p>
         <p>✓ A minimum of 1 uppercase letter &nbsp; ✓ A minimum of 1 lowercase letter</p>
         <p>✓ A minimum of 1 special character</p>
@@ -356,11 +336,11 @@ function AddressBookView() {
 
   if (showForm) {
     return (
-      <div className="flex-1 min-w-0">
+      <div className="rs-content">
         <SectionHeading>Address Book</SectionHeading>
-        <h3 className="font-serif text-[15px] mt-6 mb-6 text-stone-900">Add New Address</h3>
+        <h3 className="rs-subheading">Add New Address</h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 max-w-2xl">
+        <div className="rs-formGrid rs-maxW">
           <Field label="First name*" value={form.firstName} onChange={update("firstName")} placeholder="Enter your first name*" />
           <Field label="Last name*" value={form.lastName} onChange={update("lastName")} placeholder="Enter your last name*" />
           <SelectField label="Country/Region*" value={form.country} onChange={update("country")} options={["", "India", "United States"]} />
@@ -376,18 +356,18 @@ function AddressBookView() {
           />
         </div>
 
-        <div className="mt-6 flex flex-col gap-2 max-w-2xl">
-          <label className="flex items-center gap-2 text-[13px] text-stone-700">
+        <div className="rs-checkboxList rs-maxW">
+          <label className="rs-checkboxRow">
             <input type="checkbox" checked={form.defaultShipping} onChange={update("defaultShipping")} />
             Set as default Shipping Address
           </label>
-          <label className="flex items-center gap-2 text-[13px] text-stone-700">
+          <label className="rs-checkboxRow">
             <input type="checkbox" checked={form.defaultBilling} onChange={update("defaultBilling")} />
             Set as default Billing Address
           </label>
         </div>
 
-        <PrimaryButton className="mt-10" onClick={saveAddress}>
+        <PrimaryButton className="rs-mt10" onClick={saveAddress}>
           SAVE
         </PrimaryButton>
       </div>
@@ -395,27 +375,27 @@ function AddressBookView() {
   }
 
   return (
-    <div className="flex-1 min-w-0">
-      <div className="mb-5">
+    <div className="rs-content">
+      <div className="rs-mb16">
         <SectionHeading>Address Book</SectionHeading>
       </div>
 
       {addresses.length === 0 ? (
-        <p className="text-[13px] text-stone-500 mb-6">You do not have any stored addresses.</p>
+        <p className="rs-emptyText rs-mb24">You do not have any stored addresses.</p>
       ) : (
-        <div className="flex flex-col gap-4 mb-6">
+        <div className="rs-addrList rs-mb24">
           {addresses.map((a, i) => (
-            <div key={i} className="border border-stone-200 p-4 flex flex-wrap items-start justify-between gap-3">
-              <div className="text-[13px] text-stone-700 leading-relaxed">
-                <p className="font-semibold text-stone-900">{a.label}</p>
+            <div key={i} className="rs-addrBox">
+              <div className="rs-addrText">
+                <p className="rs-bold">{a.label}</p>
                 <p>{a.name}</p>
                 <p>{a.street}</p>
                 <p>{a.city}</p>
                 <p>{a.phone}</p>
               </div>
-              <div className="flex flex-col items-end gap-2">
-                <button className="text-[11px] underline underline-offset-2 text-stone-700">EDIT</button>
-                <span className="px-3 py-1 text-[11px] bg-[#b08d57]/15 text-[#8a6d3e]">Default Addresses</span>
+              <div className="rs-addrActions">
+                <button className="rs-linkBtn">EDIT</button>
+                <span className="rs-defaultPill">Default Addresses</span>
               </div>
             </div>
           ))}
@@ -434,9 +414,9 @@ export default function AccountPage() {
   const hasOrder = true; // set to false to see the empty state
 
   return (
-    <main className="min-h-screen bg-[#FAFAF7] font-sans text-stone-900">
-      <div className="max-w-6xl mx-auto px-4 py-10 sm:px-8 sm:py-16">
-        <div className="flex flex-col sm:flex-row gap-8 sm:gap-10">
+    <main className="rs-page">
+      <div className="rs-wrap">
+        <div className="rs-layout">
           <Sidebar active={active} onSelect={setActive} />
 
           {active === "My Account" && <MyAccountView hasOrder={hasOrder} />}
@@ -446,6 +426,335 @@ export default function AccountPage() {
           {active === "Address Book" && <AddressBookView />}
         </div>
       </div>
+
+      <style>{`
+        .rs-page {
+          min-height: 100vh;
+          background: #fafaf7;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          color: #1c1c1a;
+        }
+
+        .rs-wrap {
+          max-width: 1152px;
+          margin: 0 auto;
+          padding: 40px 16px;
+        }
+
+        @media (min-width: 640px) {
+          .rs-wrap { padding: 64px 32px; }
+        }
+
+        .rs-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+
+        @media (min-width: 640px) {
+          .rs-layout { flex-direction: row; gap: 40px; }
+        }
+
+        .rs-heading {
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          padding-bottom: 8px;
+          border-bottom: 2px solid #b08d57;
+          display: inline-block;
+          margin: 0;
+        }
+
+        .rs-subheading {
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 15px;
+          font-weight: 700;
+          margin: 24px 0;
+        }
+
+        .rs-sidebar {
+          width: 100%;
+          flex-shrink: 0;
+          border: 1px solid #e5e3dc;
+          align-self: flex-start;
+        }
+
+        @media (min-width: 640px) {
+          .rs-sidebar { width: 256px; }
+        }
+
+        .rs-sideBtn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 16px;
+          font-size: 13px;
+          border: none;
+          border-bottom: 1px solid #e5e3dc;
+          text-align: left;
+          background: #fff;
+          color: #333;
+          cursor: pointer;
+          font-family: inherit;
+        }
+
+        .rs-sideBtn:hover { background: #f7f6f2; }
+        .rs-sideBtn:last-of-type { border-bottom: none; }
+
+        .rs-sideActive { background: #1f4a3f; color: #fff; }
+        .rs-sideActive:hover { background: #1f4a3f; }
+
+        .rs-logoutWrap { padding: 16px; }
+
+        .rs-btnOutline {
+          width: auto;
+          padding: 12px 24px;
+          font-size: 13px;
+          letter-spacing: 0.05em;
+          background: #fff;
+          border: 1px solid #999;
+          cursor: pointer;
+          font-family: inherit;
+        }
+
+        .rs-btnOutline:hover { background: #f7f6f2; }
+
+        .rs-btnFull { width: 100%; }
+
+        .rs-btnAuto { padding: 8px 16px; }
+
+        .rs-btnPrimary {
+          padding: 12px 24px;
+          color: #fff;
+          background: #1f4a3f;
+          font-size: 13px;
+          letter-spacing: 0.05em;
+          border: none;
+          cursor: pointer;
+          font-family: inherit;
+        }
+
+        .rs-btnPrimary:hover { background: #17392f; }
+
+        .rs-linkBtn {
+          font-size: 11px;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #333;
+          font-family: inherit;
+        }
+
+        .rs-content { flex: 1; min-width: 0; }
+
+        .rs-narrow { max-width: 420px; }
+
+        .rs-rowBetween {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .rs-mb12 { margin-bottom: 12px; }
+        .rs-mb16 { margin-bottom: 16px; }
+        .rs-mb24 { margin-bottom: 24px; }
+        .rs-mb32 { margin-bottom: 32px; }
+        .rs-mt10 { margin-top: 40px; }
+        .rs-mt24 { margin-top: 24px; }
+        .rs-mt32 { margin-top: 32px; }
+
+        .rs-bottomBorder {
+          padding-bottom: 24px;
+          border-bottom: 1px solid #e5e3dc;
+        }
+
+        .rs-emptyText { font-size: 13px; color: #7a7566; margin: 0; }
+
+        .rs-orderBox { border: 1px solid #e5e3dc; padding: 16px; }
+
+        .rs-ordersList { display: flex; flex-direction: column; gap: 16px; }
+
+        .rs-orderRow { display: flex; flex-direction: column; gap: 16px; }
+
+        @media (min-width: 640px) {
+          .rs-orderRow { flex-direction: row; }
+        }
+
+        .rs-orderImg {
+          width: 64px;
+          height: 64px;
+          flex-shrink: 0;
+          background: #f3f2ee;
+          border: 1px solid #e5e3dc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 9px;
+          color: #a39d8c;
+          text-align: center;
+          line-height: 1.2;
+        }
+
+        .rs-orderInfo { flex: 1; min-width: 0; }
+
+        .rs-orderTop {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+
+        .rs-orderName {
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 13px;
+          margin: 0;
+        }
+
+        .rs-orderStatus { font-size: 11px; font-weight: 600; color: #1f4a3f; }
+
+        .rs-orderDesc { font-size: 11px; color: #7a7566; margin: 4px 0 0; }
+
+        .rs-orderMeta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 8px;
+          font-size: 11px;
+        }
+
+        .rs-orderMetaInline {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 8px;
+          font-size: 11px;
+        }
+
+        .rs-muted { color: #7a7566; }
+        .rs-bold { font-weight: 600; }
+
+        .rs-orderFooter {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-top: 12px;
+        }
+
+        .rs-orderPayment { font-size: 11px; color: #7a7566; }
+
+        .rs-profileList {
+          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          margin: 0;
+        }
+
+        .rs-profileRow { display: flex; gap: 8px; padding: 4px 0; }
+
+        .rs-profileLabel { font-weight: 600; width: 160px; flex-shrink: 0; margin: 0; }
+
+        .rs-profileValue { color: #4d4a3f; margin: 0; }
+
+        .rs-formGrid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        @media (min-width: 640px) {
+          .rs-formGrid { grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+        }
+
+        .rs-maxW { max-width: 680px; }
+
+        .rs-passwordFields {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .rs-fieldLabel {
+          display: block;
+          font-size: 13px;
+          margin-bottom: 4px;
+          color: #333;
+        }
+
+        .rs-textInput {
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 8px;
+          font-size: 13px;
+          outline: none;
+          background: transparent;
+          font-family: inherit;
+          box-sizing: border-box;
+        }
+
+        .rs-textInput:focus { border-bottom-color: #1f4a3f; }
+
+        .rs-selectInput { appearance: none; }
+
+        .rs-rulesText {
+          font-size: 11px;
+          color: #7a7566;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .rs-checkboxList {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .rs-checkboxRow {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 13px;
+        }
+
+        .rs-addrList { display: flex; flex-direction: column; gap: 16px; }
+
+        .rs-addrBox {
+          border: 1px solid #e5e3dc;
+          padding: 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .rs-addrText { font-size: 13px; line-height: 1.6; }
+
+        .rs-addrActions {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 8px;
+        }
+
+        .rs-defaultPill {
+          padding: 4px 12px;
+          font-size: 11px;
+          background: rgba(176, 141, 87, 0.15);
+          color: #8a6d3e;
+        }
+      `}</style>
     </main>
   );
 }

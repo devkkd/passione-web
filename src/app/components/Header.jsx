@@ -334,7 +334,7 @@ export default function Header({ isHome = true }) {
             <input type="text" placeholder="SEARCH RINGS, PENDANTS..." style={{ fontFamily: FONT_FAMILY }} />
           </div>
 
-        <Link href="#">
+        <Link href="/account">
   <button type="button" className="icon-btn" aria-label="Account">
     <svg
       width="19"
