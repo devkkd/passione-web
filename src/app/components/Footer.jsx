@@ -239,6 +239,16 @@ export default function Footer() {
 
         {/* ---- Payment methods ---- */}
         <p className="footer-payments">VISA | MC | AMEX | PAYPAL | APPLE PAY</p>
+     <p className="footer-crafted">
+  Crafted by{" "}
+  <a
+    href="https://www.kontentkraftdigital.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Kontent Kraft Digital
+  </a>
+</p>
       </div>
 
       <style jsx>{`
@@ -375,6 +385,22 @@ export default function Footer() {
           padding-top: 18px;
         }
 
+    .footer-crafted {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(244, 244, 242, 0.9);
+}
+
+.footer-crafted a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-crafted a:hover {
+  text-decoration: underline;
+}
         /* =====================================================
            MOBILE: sirf heading dikhega, tap karke accordion khulega
            ===================================================== */
