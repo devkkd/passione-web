@@ -435,15 +435,17 @@ export default function AccountPage() {
           color: #1c1c1a;
         }
 
-        .rs-wrap {
-          max-width: 1152px;
-          margin: 0 auto;
-          padding: 40px 16px;
-        }
+       .rs-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 32px 80px;
+}
 
-        @media (min-width: 640px) {
-          .rs-wrap { padding: 64px 32px; }
-        }
+@media (max-width: 768px) {
+  .rs-wrap {
+    padding: 90px 20px 60px;
+  }
+}
 
         .rs-layout {
           display: flex;
