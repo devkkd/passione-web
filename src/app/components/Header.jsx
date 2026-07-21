@@ -349,18 +349,19 @@ export default function Header({ isHome = true }) {
     </svg>
   </button>
 </Link>
-
-          <Link href="/saved" className="icon-btn" aria-label="Wishlist">
-  <svg
-    width="19"
-    height="19"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-  >
-    <path d="M12 20.5s-7.5-4.7-9.8-9.1C.6 7.8 2.4 4.5 5.7 4c2-.3 3.7.7 6.3 3 2.6-2.3 4.3-3.3 6.3-3 3.3.5 5.1 3.8 3.5 7.4C19.5 15.8 12 20.5 12 20.5z" />
-  </svg>
+<Link href="/saved">
+  <button type="button" className="icon-btn" aria-label="Wishlist">
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+    >
+      <path d="M12 20.5s-7.5-4.7-9.8-9.1C.6 7.8 2.4 4.5 5.7 4c2-.3 3.7.7 6.3 3 2.6-2.3 4.3-3.3 6.3-3 3.3.5 5.1 3.8 3.5 7.4C19.5 15.8 12 20.5 12 20.5z" />
+    </svg>
+  </button>
 </Link>
 
           <Link href="/cart">
@@ -726,16 +727,19 @@ export default function Header({ isHome = true }) {
           opacity: 0.65;
         }
 
-        .icon-btn {
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 4px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: color 0.4s ease, opacity 0.3s ease;
-        }
+       .icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.4s ease, opacity 0.3s ease;
+
+  color: inherit;
+  text-decoration: none;
+}
         .icon-btn:hover {
           opacity: 0.65;
         }
