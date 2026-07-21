@@ -88,16 +88,18 @@ export default function BestSellingDesigns({
 
         .bs-heading {
           font-family: ${SANS_FONT};
-          font-weight: 700;
-          font-size: 32px;
+          font-weight: 600;
+          font-size: 30px;
           letter-spacing: 0.01em;
           color: #ffffff;
           margin: 0 0 14px;
         }
 .bs-desc {
-  font-family: ${SERIF_FONT};
-  font-size: 16px;
+  font-family: "Times New Roman", sans serif;
+  font-weight: 300;
+  font-size: 14px;
   line-height: 1.6;
+  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.9);
   margin: 0 auto 18px;
   text-align: center;

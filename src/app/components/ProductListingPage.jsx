@@ -500,11 +500,11 @@ const {
           background: #f4f4f4;
         }
         .sort-option-active {
-          background: #3c5a45;
+          background: #1B807F;
           color: #ffffff;
         }
         .sort-option-active:hover {
-          background: #3c5a45;
+          background: #1B807F;
         }
 
         /* ---------------- Product grid ---------------- */

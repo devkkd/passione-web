@@ -39,13 +39,13 @@ const footerColumns = [
     links: ["NEW ARRIVALS", "BESTSELLERS"],
 
   },
-  {
-  title: "COMPANY",
-  links: [
-    "OUR STORY",
-    "HAPPY CUSTOMER'S",
-  ],
-},
+//   {
+//   title: "COMPANY",
+//   links: [
+//     "OUR STORY",
+//     "HAPPY CUSTOMER'S",
+//   ],
+// },
   {
     title: "TYPE",
     links: ["RINGS", "EARRINGS", "PENDANTS", "NECKLACES", "BRACELETS", "SHOP ALL"],
@@ -67,6 +67,7 @@ const footerColumns = [
       "CARE INSTRUCTIONS",
       "FAQ",
       "CONTACT US",
+      "CUSTOMER REVIEW"
     ],
   },
   {
@@ -74,7 +75,8 @@ const footerColumns = [
     links: [
       "PRIVACY POLICY",
       "TERMS & CONDITIONS",
-      "ACCESSIBILITY STATEMENT",
+      "ACCESSIBILITY ",
+      "STATEMENT",
       "PRODUCT SAFETY",
       "YOUR PRIVACY CHOICES",
     ],
@@ -190,6 +192,8 @@ export default function Footer() {
               ? "/faq"
               : link === "CONTACT US"
               ? "/contact"
+               : link === "CUSTOMER REVIEW"
+              ? "/reviewssection"
 
               // LEGAL
               : link === "PRIVACY POLICY"
@@ -253,7 +257,7 @@ export default function Footer() {
 
       <style jsx>{`
         .site-footer {
-          background-color: #276152;
+          background-color: #1B807F;
           color: #f4f4f2;
           font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -266,7 +270,7 @@ export default function Footer() {
 
         .footer-divider {
           height: 1px;
-          background-color: rgba(244, 244, 242, 0.25);
+          background-color:#B4AA8F;
           width: 100%;
         }
 
@@ -286,7 +290,7 @@ export default function Footer() {
         /* ---------------- Columns ---------------- */
        .footer-columns {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   padding: 32px 0;
 }
@@ -297,7 +301,7 @@ export default function Footer() {
           align-items: center;
           justify-content: space-between;
           font-size: 12px;
-          font-weight: 600;
+          font-weight: 500;
           letter-spacing: 0.06em;
           cursor: default;
           color: #f4f4f2;
@@ -308,7 +312,7 @@ export default function Footer() {
         }
 
         .footer-col-body {
-          margin-top: 14px;
+          margin-top: 5px;
         }
 
         .footer-col-links {
@@ -317,7 +321,7 @@ export default function Footer() {
           padding: 0;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+         
         }
 
         .footer-col-links :global(a) {
@@ -393,7 +397,7 @@ export default function Footer() {
 }
 
 .footer-crafted a {
-  color: #fff;
+  color: #FFFBF1;
   font-weight: 700;
   text-decoration: none;
 }

@@ -306,7 +306,7 @@ export default function Header({ isHome = true }) {
         {/* Center: logo */}
         <Link href="/" className="logo">
           <Image
-            src={isTransparent ? "/logo3.png" : "/logo.png"}
+            src={isTransparent ? "/logo4.png" : "/logo.png"}
             alt="Passion Jewellery"
             width={260}
             height={25}
@@ -350,11 +350,18 @@ export default function Header({ isHome = true }) {
   </button>
 </Link>
 
-          <button type="button" className="icon-btn" aria-label="Wishlist">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path d="M12 20.5s-7.5-4.7-9.8-9.1C.6 7.8 2.4 4.5 5.7 4c2-.3 3.7.7 6.3 3 2.6-2.3 4.3-3.3 6.3-3 3.3.5 5.1 3.8 3.5 7.4C19.5 15.8 12 20.5 12 20.5z" />
-            </svg>
-          </button>
+          <Link href="/saved" className="icon-btn" aria-label="Wishlist">
+  <svg
+    width="19"
+    height="19"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+  >
+    <path d="M12 20.5s-7.5-4.7-9.8-9.1C.6 7.8 2.4 4.5 5.7 4c2-.3 3.7.7 6.3 3 2.6-2.3 4.3-3.3 6.3-3 3.3.5 5.1 3.8 3.5 7.4C19.5 15.8 12 20.5 12 20.5z" />
+  </svg>
+</Link>
 
           <Link href="/cart">
   <button type="button" className="icon-btn" aria-label="Cart">
@@ -528,7 +535,7 @@ export default function Header({ isHome = true }) {
         .site-header.is-transparent .mobile-search-btn,
         .site-header.is-transparent .search-box,
         .site-header.is-transparent .search-icon {
-          color: #ffffff;
+          color: #FFFBF1;
         }
         .site-header.is-transparent .country-btn {
           border-color: rgba(255, 255, 255, 0.5);
@@ -543,7 +550,7 @@ export default function Header({ isHome = true }) {
 
         /* ---- Solid white (scrolled, dropdown open, or non-home pages) ---- */
         .site-header.is-solid {
-          background-color: #ffffff;
+          background-color: #FFFBF1;
           backdrop-filter: none;
           -webkit-backdrop-filter: none;
           border-bottom: 1px solid #ececec;
@@ -563,7 +570,7 @@ export default function Header({ isHome = true }) {
           border-color: #cfcfcf;
         }
         .site-header.is-solid .search-box {
-          background: #f7f7f7;
+          background: #FFFBF1;
           border-color: #e2e2e2;
         }
         .site-header.is-solid .search-box input::placeholder {
@@ -735,7 +742,7 @@ export default function Header({ isHome = true }) {
 
         /* ------------------------- Desktop mega-menu card ------------------------- */
         .dropdown-panel {
-          background: #ffffff;
+          background: #FFFBF1;
           border-top: 1px solid #ececec;
           border-bottom: 1px solid #ececec;
           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
@@ -759,7 +766,7 @@ export default function Header({ isHome = true }) {
           font-size: 12px;
           letter-spacing: 0.08em;
           font-weight: 700;
-          margin: 0 0 14px 0;
+          margin: 0 0 1px 0;
         }
         .dropdown-col ul {
           list-style: none;
@@ -767,7 +774,7 @@ export default function Header({ isHome = true }) {
           padding: 0;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 3px;
         }
         .dropdown-col :global(a) {
           font-size: 13px;

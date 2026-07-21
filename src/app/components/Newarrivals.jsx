@@ -276,15 +276,15 @@ export default function NewArrivals({ products = DEFAULT_PRODUCTS, title = "NEW 
           padding: 0 32px;
         }
 
-        .na-title {
-          text-align: center;
-          font-family: ${FONT_FAMILY};
-          font-weight: 400;
-          font-size: 24px;
-          letter-spacing: 0.06em;
-          color: #1a1a1a;
-          margin: 0 0 40px;
-        }
+       .na-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: #1a1a1a;
+  margin: 0 0 40px;
+}
 
         .na-viewport {
           width: 100%;
@@ -343,7 +343,7 @@ export default function NewArrivals({ products = DEFAULT_PRODUCTS, title = "NEW 
         }
 
         .na-card-title {
-          font-family: ${FONT_FAMILY};
+            font-family: "Montserrat", sans-serif;
           font-weight: 600;
           font-size: 15px;
           color: #1a1a1a;
@@ -351,9 +351,9 @@ export default function NewArrivals({ products = DEFAULT_PRODUCTS, title = "NEW 
         }
 
         .na-card-subtitle {
-          font-family: ${FONT_FAMILY};
+           font-family: "Montserrat", sans-serif;
           font-weight: 400;
-          font-size: 12.5px;
+          font-size: 12px;
           line-height: 1.55;
           color: #6f6f6f;
           margin: 0;
@@ -391,7 +391,7 @@ export default function NewArrivals({ products = DEFAULT_PRODUCTS, title = "NEW 
           position: relative;
           width: 220px;
           height: 2px;
-          background: #e2e2e2;
+          background: #B4AA8F;
           border-radius: 2px;
           overflow: hidden;
         }

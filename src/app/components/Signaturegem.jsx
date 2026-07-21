@@ -29,22 +29,21 @@ import Image from "next/image";
 const FONT_FAMILY = '"Montserrat", "Helvetica Neue", Arial, sans-serif';
 
 const DEFAULT_GEMS = [
-  { id: 1, image: "/home/5.png", name: "Sapphire", trait: "Audacity" },
-  { id: 2, image: "/home/6.png", name: "Ruby", trait: "Magnetism" },
-  { id: 3, image: "/home/7.png", name: "Topaz", trait: "Purpose" },
-  { id: 4, image: "/home/8.png", name: "White Zircon", trait: "Connection" },
-  { id: 5, image: "/home/9.png", name: "Peridot", trait: "Sincerity" },
-  { id: 6, image: "/home/10.png", name: "Tsavorite", trait: "Sensuality" },
-  { id: 7, image: "/home/11.png", name: "Amethyst", trait: "Awareness" },
-  { id: 8, image: "/home/12.png", name: "Pearl", trait: "Inner Glow" },
-  { id: 9, image: "/home/13.png", name: "Chrome Diopside", trait: "Bliss" },
-  { id: 10, image: "/home/14.png", name: "Diamond", trait: "Laser-focus" },
-  { id: 11, image: "/home/15.png", name: "Spessartine", trait: "Inspiration" },
-  { id: 12, image: "/home/16.png", name: "Citrine", trait: "Opportunity" },
-  { id: 13, image: "/home/17.png", name: "Lemon Quartz", trait: "Individuality" },
-  { id: 14, image: "/home/18.png", name: "Smoky Quartz", trait: "Presence" },
-  { id: 15, image: "/home/19.png", name: "Green Amethyst", trait: "Spontaneity" },
-  { id: 16, image: "/home/20.png", name: "Garnet", trait: "Drive" },
+  { id: 1, image: "/gem/1.png",  name: "Citrine",         trait: "Opportunity" },
+  { id: 2, image: "/gem/2.png",  name: "Smoky",           trait: "Presence" },
+  { id: 3, image: "/gem/3.png",  name: "Blue Topaz",      trait: "Purpose" },
+  { id: 4, image: "/gem/4.png",  name: "Tourmaline",      trait: "Purpose" },
+  { id: 5, image: "/gem/5.png",  name: "Opal",            trait: "Inner Glow" },
+  { id: 6, image: "/gem/6.png",  name: "Garnet",          trait: "Drive" },
+  { id: 7, image: "/gem/7.png",  name: "Green Amethyst",  trait: "Spontaneity" },
+
+  { id: 8, image: "/gem/8.png",  name: "Peridot",         trait: "Sincerity" },
+  { id: 9, image: "/gem/9.png",  name: "Tsavorite",       trait: "Sensuality" },
+  { id: 10, image: "/gem/10.png", name: "Pearl",          trait: "Inner Glow" },
+  { id: 11, image: "/gem/11.png", name: "Lemon Quartz",   trait: "Individuality" },
+  { id: 12, image: "/gem/12.png", name: "Rhodolite",      trait: "Magnetism" },
+  { id: 13, image: "/gem/13.png", name: "Iolite",         trait: "Sincerity" },
+  { id: 14, image: "/gem/14.png", name: "Sapphire",       trait: "Audacity" },
 ];
 
 export default function SignatureGem({ gems = DEFAULT_GEMS, title = "YOUR SIGNATURE POWER GEM" }) {
@@ -87,9 +86,9 @@ export default function SignatureGem({ gems = DEFAULT_GEMS, title = "YOUR SIGNAT
 
         .sg-title {
           text-align: center;
-          font-family: ${FONT_FAMILY};
-          font-weight: 400;
-          font-size: 24px;
+            font-family: "Montserrat", sans-serif;
+          font-weight: 300;
+          font-size: 22px;
           letter-spacing: 0.06em;
           color: #1a1a1a;
           margin: 0 0 44px;
@@ -97,7 +96,7 @@ export default function SignatureGem({ gems = DEFAULT_GEMS, title = "YOUR SIGNAT
 
         .sg-grid {
           display: grid;
-          grid-template-columns: repeat(8, 1fr);
+          grid-template-columns: repeat(7, 1fr);
           row-gap: 40px;
           column-gap: 16px;
         }
@@ -116,27 +115,46 @@ export default function SignatureGem({ gems = DEFAULT_GEMS, title = "YOUR SIGNAT
           margin-bottom: 14px;
         }
 
-        .sg-image {
-          object-fit: contain;
-        }
+      .sg-image {
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
 
-       .sg-name {
+      .sg-name {
   font-family: "Times New Roman", Times, serif;
   font-weight: 600;
   font-size: 13.5px;
   color: #1a1a1a;
   margin: 0 0 4px;
   white-space: nowrap;
+  transition: color 0.35s ease;
 }
 
         .sg-trait {
-          font-family: ${FONT_FAMILY};
-          font-weight: 400;
-          font-size: 11.5px;
-          color: #6f6f6f;
-          margin: 0;
-        }
+  font-family: ${FONT_FAMILY};
+  font-weight: 400;
+  font-size: 11.5px;
+  color: #6f6f6f;
+  margin: 0;
+  transition: color 0.35s ease;
+}
+.sg-item:hover .sg-image {
+  transform: scale(1.5);
+}
 
+.sg-item:hover .sg-name {
+  color: #8B6A3E;
+}
+
+.sg-item:hover .sg-trait {
+  color: #444;
+}
+
+@media (hover: hover) {
+  .sg-item:hover {
+    transform: translateY(-4px);
+  }
+}
         /* ------------------------- Responsive ------------------------- */
         @media (max-width: 768px) {
           .sg-inner {

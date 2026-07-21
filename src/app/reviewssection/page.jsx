@@ -170,7 +170,7 @@ export default function ReviewsSection() {
         .rs-ratingNumber {
           font-size: 38px;
           font-weight: 700;
-          color: #276152;
+          color: #1B807F;
         }
 
         .rs-ratingStars {
@@ -180,7 +180,7 @@ export default function ReviewsSection() {
         .rs-verifiedCount {
           font-size: 30px;
           font-weight: 700;
-          color: #276152;
+          color: #1B807F;
           margin: 0 0 30px;
         }
 
@@ -202,12 +202,12 @@ export default function ReviewsSection() {
         }
 
         .rs-stars {
-          color: #276152;
+          color: #1B807F;
           letter-spacing: 2px;
         }
 
         .rs-check {
-          color: #276152;
+          color: #1B807F;
         }
 
         .rs-bold {

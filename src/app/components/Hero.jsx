@@ -29,8 +29,8 @@ export default function Hero() {
     <section className="hero">
       <video
   className="hero-video"
-  src="/1.mp4"
-  poster="/h1.png"
+  // src="/1.mp4"
+  poster="/home/th.png"
   autoPlay
   loop
   muted
@@ -95,35 +95,35 @@ export default function Hero() {
           max-width: 720px;
           padding: 0 24px;
           text-align: center;
-          color: #ffffff;
+          color: #020202;
         }
 
         .hero-heading {
           font-family: "Times New Roman", Times, serif;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 30px;
           line-height: 1.3;
           margin: 0 0 16px;
-          color: #ffffff;
+          color: #020202;
         }
 
         .hero-text {
           font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
-          font-weight: 400;
+          font-weight: 300;
           font-size: 13px;
           line-height: 1.7;
           letter-spacing: 0.01em;
           margin: 0 0 26px;
-          color: #ffffff;
+          color: #020202;
         }
 
         .hero-cta {
           font-family: "Times New Roman", Times, serif;
           font-size: 15px;
-          font-style: italic;
-          color: #ffffff;
+          
+          color: #020202;
           text-decoration: none;
-          border-bottom: 1px solid #ffffff;
+          border-bottom: 1px solid #020202;
           padding-bottom: 4px;
           display: inline-block;
           transition: opacity 0.3s ease;

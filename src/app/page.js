@@ -1,3 +1,4 @@
+import BehindFounder from "./components/BehindFounder";
 import BestSellingDesigns from "./components/Bestsellingdesigns";
 import CustomerReviews from "./components/Customerreviews";
 import FeaturedCollection from "./components/Featuredcollection";
@@ -19,7 +20,8 @@ export default function Home() {
         <SignatureGem />
         <BestSellingDesigns />
         <FeaturedCollection />
-        <LuxuryJewellery />
+        {/* <LuxuryJewellery /> */}
+        <BehindFounder />
         <CustomerReviews />
         <LifestyleShowcase />
 

@@ -773,8 +773,9 @@ function Styles() {
           margin-bottom: 32px;
         }
         :global(.text-link) {
-          font-size: 13px;
-          color: #555;
+          font-size: 14px;
+         font-weight: 500;
+          color: #020202;
           background: none;
           border: none;
           cursor: pointer;
@@ -795,7 +796,7 @@ function Styles() {
           margin-left: 8px;
           padding: 8px 16px;
           color: #fff;
-          background: #276152;
+          background: #1B807F;
           font-size: 11px;
           letter-spacing: 0.05em;
         }
@@ -825,7 +826,7 @@ function Styles() {
         :global(.continue-btn) {
           width: auto;
           padding: 13px 40px;
-          background: #276152;
+          background: #1B807F;
         }
         :global(.continue-btn:hover) {
           background: #1e4c40;

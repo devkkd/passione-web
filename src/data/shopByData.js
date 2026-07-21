@@ -208,7 +208,7 @@ export const shopByPages = [
     navGroup: "FEATURED",
     navLabel: "New Arrivals",
     pageTitle: " New Arrivals",
-    heroImage: "/new.png",
+    heroImage: "/new1.png",
     description:
       "Inspired by nature and shaped by design, our newest arrivals bring fresh perspective to everyday jewellery. Discover pieces that reflect beauty in its most natural form. New designs rooted in organic inspiration each piece captures a moment of nature, reimagined into something you can wear and cherish.",
   }),
@@ -217,7 +217,7 @@ export const shopByPages = [
     navGroup: "FEATURED",
     navLabel: "Bestsellers",
     pageTitle: "Best Sellers",
-    heroImage: "/best.png",
+    heroImage: "/best1.png",
     description:
       "Inspired by the effortless beauty of nature and refined through intentional design, our best-selling pieces embody modern luxury in its most timeless form. Each creation begins with an organic inspiration soft curves, fluid textures, and natural forms reimagined into jewellery that feels both contemporary and enduring. Designed to be worn every day yet treasured for a lifetime, these pieces go beyond adornment they become part of your story, capturing moments, emotions, and individuality with quiet sophistication.",
   }),
@@ -234,7 +234,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Rings",
     pageTitle: "Rings",
-    heroImage: "/rings.png",
+    heroImage: "/rings1.png",
     description:
       "Inspired by the natural world and refined through thoughtful craftsmanship, our rings are a study in balance where organic forms meet modern design. Each piece is carefully sculpted to feel effortless yet distinctive, capturing subtle details that reveal themselves over time. Whether worn as a personal signature or layered for a more expressive look, these rings are created to move with you quietly elevating the everyday while holding lasting meaning.",
     products: buildRingProducts(12),
@@ -246,7 +246,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Earrings",
     pageTitle: "Earrings",
-    heroImage: "/earings.png",
+    heroImage: "/earings1.png",
     description:
       "Inspired by the fluid beauty of nature, our earrings are designed to bring light, movement, and refinement to every moment. Each piece reflects a harmony of organic forms and precise craftsmanship resulting in silhouettes that feel both modern and timeless. Whether subtle or statement, these earrings are created to elevate your everyday with quiet sophistication and enduring style.",
     products: buildEarringProducts(12),

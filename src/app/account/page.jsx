@@ -463,7 +463,7 @@ export default function AccountPage() {
           font-weight: 700;
           letter-spacing: -0.01em;
           padding-bottom: 8px;
-          border-bottom: 2px solid #b08d57;
+          border-bottom: 2px solid #B4AA8F;
           display: inline-block;
           margin: 0;
         }
@@ -478,7 +478,7 @@ export default function AccountPage() {
         .rs-sidebar {
           width: 100%;
           flex-shrink: 0;
-          border: 1px solid #e5e3dc;
+          border: 1px solid #B4AA8F;
           align-self: flex-start;
         }
 
@@ -494,7 +494,7 @@ export default function AccountPage() {
           padding: 12px 16px;
           font-size: 13px;
           border: none;
-          border-bottom: 1px solid #e5e3dc;
+          border-bottom: 1px solid #B4AA8F;
           text-align: left;
           background: #fff;
           color: #333;
@@ -505,8 +505,8 @@ export default function AccountPage() {
         .rs-sideBtn:hover { background: #f7f6f2; }
         .rs-sideBtn:last-of-type { border-bottom: none; }
 
-        .rs-sideActive { background: #1f4a3f; color: #fff; }
-        .rs-sideActive:hover { background: #1f4a3f; }
+        .rs-sideActive { background: #1B807F; color: #fff; }
+        .rs-sideActive:hover { background: #166967; }
 
         .rs-logoutWrap { padding: 16px; }
 
@@ -516,7 +516,7 @@ export default function AccountPage() {
           font-size: 13px;
           letter-spacing: 0.05em;
           background: #fff;
-          border: 1px solid #999;
+          border: 1px solid #B4AA8F;
           cursor: pointer;
           font-family: inherit;
         }
@@ -530,7 +530,7 @@ export default function AccountPage() {
         .rs-btnPrimary {
           padding: 12px 24px;
           color: #fff;
-          background: #1f4a3f;
+          background: #1B807F;
           font-size: 13px;
           letter-spacing: 0.05em;
           border: none;
@@ -538,7 +538,7 @@ export default function AccountPage() {
           font-family: inherit;
         }
 
-        .rs-btnPrimary:hover { background: #17392f; }
+        .rs-btnPrimary:hover { background: #166967; }
 
         .rs-linkBtn {
           font-size: 11px;
@@ -573,12 +573,12 @@ export default function AccountPage() {
 
         .rs-bottomBorder {
           padding-bottom: 24px;
-          border-bottom: 1px solid #e5e3dc;
+          border-bottom: 1px solid #B4AA8F;
         }
 
         .rs-emptyText { font-size: 13px; color: #7a7566; margin: 0; }
 
-        .rs-orderBox { border: 1px solid #e5e3dc; padding: 16px; }
+        .rs-orderBox { border: 1px solid #B4AA8F; padding: 16px; }
 
         .rs-ordersList { display: flex; flex-direction: column; gap: 16px; }
 
@@ -593,7 +593,7 @@ export default function AccountPage() {
           height: 64px;
           flex-shrink: 0;
           background: #f3f2ee;
-          border: 1px solid #e5e3dc;
+          border: 1px solid #B4AA8F;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -618,7 +618,7 @@ export default function AccountPage() {
           margin: 0;
         }
 
-        .rs-orderStatus { font-size: 11px; font-weight: 600; color: #1f4a3f; }
+        .rs-orderStatus { font-size: 11px; font-weight: 600; color: #1B807F; }
 
         .rs-orderDesc { font-size: 11px; color: #7a7566; margin: 4px 0 0; }
 
@@ -694,7 +694,7 @@ export default function AccountPage() {
         .rs-textInput {
           width: 100%;
           border: none;
-          border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid #B4AA8F;
           padding-bottom: 8px;
           font-size: 13px;
           outline: none;
@@ -703,7 +703,7 @@ export default function AccountPage() {
           box-sizing: border-box;
         }
 
-        .rs-textInput:focus { border-bottom-color: #1f4a3f; }
+        .rs-textInput:focus { border-bottom-color: #1B807F; }
 
         .rs-selectInput { appearance: none; }
 
@@ -732,7 +732,7 @@ export default function AccountPage() {
         .rs-addrList { display: flex; flex-direction: column; gap: 16px; }
 
         .rs-addrBox {
-          border: 1px solid #e5e3dc;
+          border: 1px solid #B4AA8F;
           padding: 16px;
           display: flex;
           justify-content: space-between;
@@ -753,8 +753,8 @@ export default function AccountPage() {
         .rs-defaultPill {
           padding: 4px 12px;
           font-size: 11px;
-          background: rgba(176, 141, 87, 0.15);
-          color: #8a6d3e;
+          background: rgba(27, 128, 127, 0.12);
+          color: #1B807F;
         }
       `}</style>
     </main>

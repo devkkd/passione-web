@@ -63,7 +63,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 export default function LifestyleShowcase({
-  image = "/home/27.png",
+  image = "/home/35.png",
   imageAlt = "Passione ring worn on hand",
   products = DEFAULT_PRODUCTS,
 }) {

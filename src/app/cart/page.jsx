@@ -11,7 +11,7 @@ const CART_ITEM = {
 };
 
 function formatUSD(amount) {
-  return `$${amount.toFixed(2)}`;
+  return `$${amount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 export default function CartPage() {
@@ -32,33 +32,33 @@ export default function CartPage() {
               <img src={CART_ITEM.image} alt={CART_ITEM.name} className="item-img" />
 
               <div className="item-body">
-                <div>
+                <div className="item-top">
                   <h2 className="item-name">{CART_ITEM.name}</h2>
-                  <p className="item-desc">{CART_ITEM.description}</p>
-
-                  <div className="item-controls">
-                    <div className="qty-box">
-                      <button
-                        onClick={() => setQty((q) => Math.max(1, q - 1))}
-                        className="qty-btn"
-                        aria-label="Decrease quantity"
-                      >
-                        −
-                      </button>
-                      <span className="qty-value">{qty}</span>
-                      <button
-                        onClick={() => setQty((q) => q + 1)}
-                        className="qty-btn"
-                        aria-label="Increase quantity"
-                      >
-                        +
-                      </button>
-                    </div>
-                    <button className="save-later">SAVE FOR LATER</button>
-                  </div>
+                  <p className="item-price">{formatUSD(CART_ITEM.price)}</p>
                 </div>
 
-                <p className="item-price">{formatUSD(CART_ITEM.price)}</p>
+                <p className="item-desc">{CART_ITEM.description}</p>
+
+                <div className="item-controls">
+                  <div className="qty-box">
+                    <button
+                      onClick={() => setQty((q) => Math.max(1, q - 1))}
+                      className="qty-btn"
+                      aria-label="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <span className="qty-value">{qty}</span>
+                    <button
+                      onClick={() => setQty((q) => q + 1)}
+                      className="qty-btn"
+                      aria-label="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button className="save-later">SAVE FOR LATER</button>
+                </div>
               </div>
             </div>
           </div>
@@ -98,35 +98,32 @@ export default function CartPage() {
         </div>
       </div>
 
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-      `}</style>
-
       <style jsx>{`
         .cart-page {
           min-height: 100vh;
           background: #ffffff;
-          font-family: "Montserrat", sans-serif;
+          font-family: "Times New Roman", Times, serif;
           color: #111111;
         }
         .wrap {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 120px 32px;
+          padding: 40px 32px 100px;
         }
         .cart-title {
-          font-family: "Times New Roman", Times, serif;
-          font-size: 22px;
+          font-size: 20px;
+          font-weight: 400;
           text-align: center;
-          margin-bottom: 32px;
+          margin-bottom: 28px;
+           margin-top: 28px;
         }
         .cart-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 32px;
+          gap: 24px;
         }
         .item-col {
-          border-top: 1px solid #e5e5e5;
+          border-top: 1px solid #b4aa8f;
           padding-top: 24px;
         }
         .item-row {
@@ -144,48 +141,64 @@ export default function CartPage() {
           flex: 1;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+        }
+        .item-top {
+          display: flex;
           justify-content: space-between;
+          align-items: flex-start;
+          gap: 16px;
         }
         .item-name {
-          font-family: "Times New Roman", Times, serif;
-          font-size: 17px;
-          margin-bottom: 4px;
+          font-size: 16px;
+          font-weight: 400;
+          margin: 0;
+        }
+        .item-price {
+          font-size: 15px;
+          font-weight: 700;
+          white-space: nowrap;
+          margin: 0;
         }
         .item-desc {
-          font-size: 13px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 12.5px;
           color: #6b6b6b;
           max-width: 320px;
+          margin: 8px 0 0;
+          line-height: 1.5;
         }
         .item-controls {
           display: flex;
           align-items: center;
-          gap: 16px;
-          margin-top: 16px;
+          gap: 20px;
+          margin-top: 20px;
         }
         .qty-box {
           display: flex;
           align-items: center;
-          border: 1px solid #ccc;
+          border: 1px solid #cfc7ae;
         }
         .qty-btn {
-          width: 32px;
-          height: 32px;
+          width: 30px;
+          height: 30px;
           background: none;
           border: none;
           cursor: pointer;
           color: #555;
           font-size: 15px;
+          font-family: Arial, Helvetica, sans-serif;
         }
         .qty-btn:hover {
-          background: #f7f7f7;
+          background: #f7f7f2;
         }
         .qty-value {
-          width: 32px;
+          width: 28px;
           text-align: center;
           font-size: 13px;
+          font-family: Arial, Helvetica, sans-serif;
         }
         .save-later {
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 11px;
           letter-spacing: 0.05em;
           text-decoration: underline;
@@ -195,22 +208,18 @@ export default function CartPage() {
           cursor: pointer;
           color: #444;
         }
-        .item-price {
-          font-weight: 600;
-          font-size: 15px;
-          white-space: nowrap;
-        }
         .v-divider {
           display: none;
         }
         .summary-col {
-          border-top: 1px solid #e5e5e5;
+          border-top: 1px solid #b4aa8f;
           padding-top: 24px;
         }
         .summary-lines {
           display: flex;
           flex-direction: column;
           gap: 12px;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 13px;
         }
         .summary-row {
@@ -221,47 +230,117 @@ export default function CartPage() {
           color: #6b6b6b;
         }
         .bold {
-          font-weight: 600;
+          font-weight: 700;
         }
         .h-divider {
-          border-top: 1px solid #e5e5e5;
+          border-top: 1px solid #b4aa8f;
           margin: 16px 0;
         }
         .total-row {
-          font-weight: 600;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 700;
           font-size: 14px;
         }
         .fine-print {
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 11px;
           color: #8a8a8a;
           margin-top: 4px;
         }
         .btn-primary {
           width: 100%;
-          padding: 13px;
+          padding: 14px;
           color: #fff;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 13px;
-          letter-spacing: 0.05em;
+          font-weight: 600;
+          letter-spacing: 0.06em;
           border: none;
           cursor: pointer;
-          background: #276152;
+          background: #1b807f;
           transition: background 0.2s ease;
         }
         .btn-primary:hover {
-          background: #1e4c40;
+          background: #156665;
         }
         .checkout-btn {
           margin-top: 24px;
         }
 
-        @media (min-width: 1024px) {
+        /* ---------- DESKTOP ---------- */
+        @media (min-width: 900px) {
+          .wrap {
+            padding: 60px 32px 140px;
+          }
           .cart-grid {
-            grid-template-columns: 1fr auto 360px;
+            grid-template-columns: 1fr auto 340px;
+            gap: 40px;
           }
           .v-divider {
             display: block;
             width: 1px;
-            background: #e5e5e5;
+            background: #b4aa8f;
+          }
+        }
+
+        /* ---------- MOBILE ---------- */
+        @media (max-width: 520px) {
+          .wrap {
+            padding: 28px 16px 60px;
+          }
+          .cart-title {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+          .item-row {
+            gap: 14px;
+          }
+          .item-img {
+            width: 72px;
+            height: 72px;
+          }
+          .item-name {
+            font-size: 14px;
+          }
+          .item-price {
+            font-size: 13px;
+          }
+          .item-desc {
+            font-size: 11.5px;
+            max-width: 100%;
+          }
+          .item-top {
+            flex-direction: column;
+            gap: 4px;
+          }
+          .item-controls {
+            gap: 14px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+          }
+          .qty-btn {
+            width: 26px;
+            height: 26px;
+            font-size: 13px;
+          }
+          .qty-value {
+            font-size: 12px;
+          }
+          .save-later {
+            font-size: 10px;
+          }
+          .summary-lines {
+            font-size: 12px;
+          }
+          .total-row {
+            font-size: 13px;
+          }
+          .fine-print {
+            font-size: 10px;
+          }
+          .btn-primary {
+            padding: 12px;
+            font-size: 12px;
           }
         }
       `}</style>

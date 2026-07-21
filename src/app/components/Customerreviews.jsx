@@ -245,7 +245,7 @@ onMouseLeave={() => {
           text-align: center;
           font-family: ${SANS_FONT};
           font-weight: 500;
-          font-size: 13px;
+          font-size: 14px;
           letter-spacing: 0.14em;
           color: #1a1a1a;
           margin: 0 0 14px;
@@ -253,10 +253,10 @@ onMouseLeave={() => {
 
         .cr-heading {
           text-align: center;
-          font-family: ${SANS_FONT};
+          font-family: ${SERIF_FONT};
           font-weight: 700;
           font-size: 34px;
-          color: #276152;
+          color: #1B807F;
           margin: 0 0 14px;
         }
 
@@ -264,7 +264,7 @@ onMouseLeave={() => {
           text-align: center;
           font-family: ${SERIF_FONT};
           font-size: 14px;
-          color: #3a3a3a;
+           color: #1B807F;
           letter-spacing: 0.02em;
           margin: 0 0 40px;
         }
@@ -292,7 +292,7 @@ onMouseLeave={() => {
           width: calc(25% - 18px);
           min-width: 220px;
           box-sizing: border-box;
-          border: 1px solid #e6e6e6;
+          border: 1px solid ;
           border-radius: 4px;
           padding: 24px 22px;
           display: flex;
@@ -368,7 +368,7 @@ onMouseLeave={() => {
           position: relative;
           width: 220px;
           height: 2px;
-          background: #e2e2e2;
+          background: #B4AA8F;
           border-radius: 2px;
           overflow: hidden;
         }

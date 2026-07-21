@@ -326,12 +326,12 @@ export default function ProductDetailPage({ product, related = [] }) {
           cursor: pointer;
           transition: opacity 0.25s ease;
         }
-        .pd-btn-cart { background: #276152; color: #fff; }
+        .pd-btn-cart { background: #1B807F; color: #fff; }
         .pd-btn-buy { background: #141414; color: #fff; }
         .pd-btn:hover { opacity: 0.85; }
 
-        .pd-accordions { border-top: 1px solid #e2e2e2; }
-        .pd-accordion { border-bottom: 1px solid #e2e2e2; }
+        .pd-accordions { border-top: 1px solid #B4AA8F; }
+        .pd-accordion { border-bottom: 1px solid #B4AA8F; }
         .pd-accordion-head {
           width: 100%;
           display: flex;
@@ -352,7 +352,7 @@ export default function ProductDetailPage({ product, related = [] }) {
         .pd-accordion-body ul { margin: 8px 0; padding-left: 18px; }
         .pd-sub-heading { font-weight: 700; margin: 12px 0 4px; font-family: 'Montserrat', sans-serif; font-size: 13px; }
 
-        .pd-related { max-width: 1400px; margin: 0 auto; padding: 40px 32px 80px; border-top: 1px solid #eee; }
+        .pd-related { max-width: 1400px; margin: 0 auto; padding: 40px 32px 80px;  }
         .pd-related-heading { text-align: center; font-size: 24px; margin: 0 0 32px; }
         .pd-related-row-wrap { position: relative; display: flex; align-items: center; gap: 12px; }
         .pd-related-row {
@@ -468,7 +468,7 @@ export default function ProductDetailPage({ product, related = [] }) {
           margin: 44px 0 30px;
         }
 
-        .pdc-divider {  height: 1px; background: #dcdcd8; margin: 18px 0; flex-shrink: 0; }
+        .pdc-divider {  height: 1px; background: #B4AA8F; margin: 18px 0; flex-shrink: 0; }
 
         .pdc-col-headers {
           display: flex;
@@ -526,7 +526,7 @@ export default function ProductDetailPage({ product, related = [] }) {
           display: flex;
           align-items: center;
           gap: 0;
-          border: 1px solid #d8d8d4;
+          border: 1px solid #B4AA8F;
           width: fit-content;
           flex-shrink: 0;
           margin: 30px 0 0;
@@ -578,8 +578,8 @@ export default function ProductDetailPage({ product, related = [] }) {
           cursor: pointer;
           transition: opacity 0.25s ease;
         }
-        .pdc-btn-checkout { background: #276152; color: #fff; }
-        .pdc-btn-bag { background: #fff; color: #141414; border: 1px solid #141414; }
+        .pdc-btn-checkout { background: #1B807F; color: #fff; }
+        .pdc-btn-bag { background: #fff; color: #141414; border: 1px solid #B4AA8F; }
         .pdc-btn:hover { opacity: 0.85; }
 
   .pdc-continue {

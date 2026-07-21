@@ -397,7 +397,7 @@ export default function ContactPage() {
         border:none;
         cursor:pointer;
 
-        background:#276152;
+        background:#1B807F;
         color:#fff;
 
         font-family:Montserrat,sans-serif;
