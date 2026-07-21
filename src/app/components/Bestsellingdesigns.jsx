@@ -28,7 +28,7 @@ export default function BestSellingDesigns({
   heading = "Best Selling Designs",
   description = "Explore our most loved treasures, crafted to captivate. These top picks shine with elegance, lighting up your moments.",
   ctaLabel = "SHOP NOW",
-  ctaHref = "/best-sellers",
+  ctaHref = "/shop-by/bestsellers",
 }) {
   return (
     <section className="best-selling">

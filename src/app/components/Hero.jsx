@@ -50,7 +50,7 @@ export default function Hero() {
           Each Gemstone Tells The Story Of A Land Alive With Colour.
         </p>
 
-        <a href="#collections" className="hero-cta">
+        <a href="/shop-by/new-arrivals" className="hero-cta">
           View Collections ↓
         </a>
       </div>
