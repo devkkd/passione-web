@@ -306,7 +306,7 @@ export default function Header({ isHome = true }) {
         {/* Center: logo */}
         <Link href="/" className="logo">
           <Image
-            src={isTransparent ? "/logo4.png" : "/logo.png"}
+            src={isTransparent ? "/logo10.png" : "/logo7.png"}
             alt="Passion Jewellery"
             width={260}
             height={25}

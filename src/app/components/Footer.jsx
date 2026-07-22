@@ -97,7 +97,7 @@ export default function Footer() {
         {/* ---- Top logo ---- */}
         <div className="footer-logo-row">
           <Image
-            src="/logo3.png"
+            src="/logo10.png"
             alt="Passione Jewelry"
             width={320}
             height={30}
@@ -229,7 +229,7 @@ export default function Footer() {
           </p>
 
           <div className="footer-logo2">
-            <Image src="/logo2.png" alt="Passione Jewelry" width={40} height={40} />
+            <Image src="/logo6.png" alt="Passione Jewelry" width={40} height={40} />
           </div>
 
           <div className="footer-socials">

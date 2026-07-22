@@ -1,62 +1,81 @@
 "use client";
 
 import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <main className="about">
       {/* ---------- Hero / Intro ---------- */}
       <section className="intro">
         <p className="eyebrow">ABOUT</p>
-        <h1 className="title">Drawn from, Earth&apos;s Heart</h1>
-        <p className="subtitle">A love letter to Thailand, written in gold</p>
-        <p className="lead">
-          We did not set out to build a jewelry brand. We set out to find the
-          most beautiful things in the world — and we found them in the
-          rivers and earth of Thailand.
-        </p>
+        <h1 className="title">Passione Gioielli</h1>
+        <p className="subtitle">Colour, craftsmanship and individuality</p>
 
-        <blockquote className="quote">
-          &quot;We believe that every gemstone carries the memory of the
-          place it was born the pressure, the heat, the slow passage of
-          geological time. Our work is simply to honour that memory.&quot;
-        </blockquote>
+        <p className="lead">
+          Passione Gioielli is a celebration of colour, craftsmanship and
+          individuality. Rooted in Thailand&apos;s renowned gemstone
+          heritage, the brand creates distinctive jewellery that brings the
+          natural character of each stone to life.
+        </p>
+        <p className="lead">
+          Every creation begins with a gemstone chosen for its unique light,
+          tone and personality. From the first sketch to the final setting,
+          each detail is thoughtfully considered, combining the precision of
+          traditional craftsmanship with a refined, contemporary design
+          language.
+        </p>
+        <p className="lead">
+          Rather than following fleeting trends, Passione Gioielli creates
+          pieces with a lasting presence. Jewellery designed to feel
+          personal, to accompany meaningful moments and to become part of
+          the stories passed from one generation to the next.
+        </p>
 
         <hr className="divider" />
-
-        <p className="foundedBold">Passione Jewelry was founded in Bangkok,</p>
-        <p className="foundedText">
-          Thailand, in 2018 with a single, impassioned belief: that the most
-          extraordinary jewels in the world are already here, waiting to be
-          discovered, held, and worn. This is the story of how we found them
-          and why we will never stop searching.
-        </p>
       </section>
 
-      {/* ---------- Where It Began (text left / image right) ---------- */}
+      {/* ---------- Full-width banner ---------- */}
+      <section className="banner">
+        <div className="bannerImageWrap">
+          <Image
+            src="/about/7.jpg"
+            alt="Behind Passione Gioielli — designer at work"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+          />
+          <div className="bannerOverlay" />
+        </div>
+        <div className="bannerText">
+          <p className="bannerEyebrow">BEHIND PASSIONE GIOIELLI</p>
+          <p className="bannerQuote">
+            Designed with emotion. Crafted with intention.
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- Our Heritage (text left / image right) ---------- */}
       <section className="split">
         <div className="textCol order-text-first">
-          <h2 className="heading">Where It Began</h2>
+          <h2 className="heading">Our Heritage</h2>
           <p className="body">
-            <strong>
-              Passione Jewelry was founded in 2012 in Bangkok,
-            </strong>{" "}
-            Thailand a city renowned for its gemstone artistry and
-            centuries-old tradition of fine craftsmanship. What began as a
-            deep love for rare, colorful gemstones grew into a collection
-            built on one simple belief: jewelry should never just be worn, it
-            should be felt.
+            Thailand has long been recognised for its remarkable gemstones
+            and generations of skilled artisans. This heritage lies at the
+            heart of Passione Gioielli, inspiring a deep appreciation for
+            vibrant colour, fine materials and the art of working by hand.
           </p>
           <p className="body">
-            From our home in the heart of Bangkok&apos;s gem trade, we set
-            out to create pieces that go beyond trend-driven design jewelry
-            with soul, character, and a story of its own.
+            By bringing this tradition into a modern context, the brand
+            creates jewellery that feels both timeless and unexpected,
+            honouring its origins while expressing a distinctly contemporary
+            point of view.
           </p>
         </div>
         <div className="imageCol order-image-first">
           <div className="imageWrap">
             <Image
-              src="/about/1.png"
-              alt="Gold earrings with citrine gemstones resting on black fabric"
+              src="/about/4.jpg"
+              alt="Hand-sketched jewellery designs in a studio notebook"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
@@ -70,8 +89,8 @@ export default function AboutPage() {
         <div className="imageCol order-image-first">
           <div className="imageWrap">
             <Image
-              src="/about/2.png"
-              alt="Designer working with jewelry pieces in the studio"
+              src="/about/5.jpg"
+              alt="Designer setting gemstones by hand"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
@@ -81,49 +100,41 @@ export default function AboutPage() {
         <div className="textCol order-text-second">
           <h2 className="heading">Our Philosophy</h2>
           <p className="body">
-            Every Passione piece begins with a stone, not a sketch. We source
-            rare and unusual gemstones citrine, tourmaline, opal, garnet,
-            iolite, amethyst, and more and let each one&apos;s natural color,
-            cut, and character guide the design around it.
+            We believe that no two gemstones and no two people are entirely
+            alike. Each stone carries its own variations, brilliance and
+            character, making every creation naturally individual.
           </p>
           <p className="body">
-            The result is a collection where no two pieces feel quite the
-            same, each one designed to celebrate individuality rather than
-            conform to it.
-          </p>
-          <p className="body">
-            We believe true luxury isn&apos;t about following trends
-            it&apos;s about wearing something that feels unmistakably you.
+            Our jewellery is designed with emotion and crafted with
+            intention. Every piece reflects a balance of artistry, quality
+            and wearability, created not simply as an accessory, but as
+            something deeply personal.
           </p>
         </div>
       </section>
 
       {/* ---------- Meet the Designer (text left / image right) ---------- */}
-      <section className="split">
+      <section className="split designer">
         <div className="textCol order-text-first">
           <h2 className="heading">Meet the Designer</h2>
+          <p className="designerName">Mukesh Khanchandani</p>
+          <p className="designerTitle">Founder &amp; Creative Director</p>
           <p className="body">
-            John Deo is the creative force behind Passione Jewelry. [1–2
-            sentences on their background — training, years of experience,
-            what drew them to gemstone jewelry design.]
+            For Mukesh Khanchandani, jewellery begins with emotion. Each
+            design is inspired by the individuality of a gemstone and shaped
+            into a creation that feels both refined and deeply personal.
           </p>
           <p className="body">
-            [1–2 sentences describing their design philosophy or process
-            e.g., how they select stones, what inspires their work, what they
-            want a woman to feel when she wears their pieces.]
-          </p>
-          <p className="body">
-            Working closely with Bangkok&apos;s skilled artisans and gem
-            cutters, [Designer Name] brings each design to life by hand —
-            combining traditional craftsmanship with a distinctly modern,
-            wearable elegance.
+            The result is jewellery defined by expressive colour, meticulous
+            craftsmanship and enduring elegance — with pieces created to be
+            treasured today and passed on with their stories intact.
           </p>
         </div>
         <div className="imageCol order-image-first">
-          <div className="imageWrap">
+          <div className="imageWrap portrait">
             <Image
-              src="/about/3.png"
-              alt="Hands holding an assortment of colorful gemstones"
+              src="/about/6.jpg"
+              alt="Mukesh Khanchandani, Founder and Creative Director of Passione Gioielli"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
@@ -152,7 +163,7 @@ export default function AboutPage() {
           font-size: 18px;
           letter-spacing: 1px;
           font-weight: 500;
-           margin-top: 20px;
+          margin-top: 20px;
           margin-bottom: 16px;
         }
 
@@ -170,35 +181,68 @@ export default function AboutPage() {
         }
 
         .lead {
-          font-size: 13px;
+          font-size: 14px;
           line-height: 1.7;
-          margin: 0 0 40px;
+          margin: 0 0 18px;
+          text-align: center;
         }
 
-        .quote {
-          font-size: 22px;
-          
-          line-height: 1.6;
-          margin: 0 0 32px;
+        .lead:last-of-type {
+          margin-bottom: 40px;
         }
 
         .divider {
           width: 690px;
           border: none;
           border-top: 1px solid #ccc;
-          margin: 0 auto 32px;
+          margin: 0 auto 0;
         }
 
-        .foundedBold {
-          font-size: 14px;
-          font-weight: 700;
-          margin: 0 0 12px;
+        /* ---------- Full-width banner ---------- */
+        .banner {
+          position: relative;
+          width: 100%;
+          margin: 0 0 72px;
         }
 
-        .foundedText {
+        .bannerImageWrap {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 7;
+          overflow: hidden;
+        }
+
+        .bannerOverlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.55) 100%
+          );
+        }
+
+        .bannerText {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          transform: translateX(-50%);
+          text-align: center;
+          color: #fdfdfd;
+          width: 90%;
+        }
+
+        .bannerEyebrow {
           font-size: 13px;
+          letter-spacing: 2px;
           font-weight: 500;
-          line-height: 1.7;
+          margin: 0 0 10px;
+        }
+
+        .bannerQuote {
+          font-size: 22px;
+          font-style: italic;
+          line-height: 1.5;
           margin: 0;
         }
 
@@ -208,6 +252,10 @@ export default function AboutPage() {
           align-items: center;
           gap: 48px;
           margin-bottom: 72px;
+        }
+
+        .split.designer {
+          margin-bottom: 0;
         }
 
         .textCol {
@@ -221,8 +269,12 @@ export default function AboutPage() {
         .imageWrap {
           position: relative;
           width: 100%;
-          aspect-ratio: 4 / 1.5;
+          aspect-ratio: 4 / 3.5;
           overflow: hidden;
+        }
+
+        .imageWrap.portrait {
+          aspect-ratio: 4 / 5;
         }
 
         .heading {
@@ -239,6 +291,19 @@ export default function AboutPage() {
 
         .body:last-child {
           margin-bottom: 0;
+        }
+
+        .designerName {
+          font-size: 19px;
+          font-weight: 700;
+          margin: 0 0 4px;
+        }
+
+        .designerTitle {
+          font-size: 13px;
+          font-style: italic;
+          color: #555;
+          margin: 0 0 20px;
         }
 
         /* default desktop order (row = source order) */
@@ -266,12 +331,20 @@ export default function AboutPage() {
             font-size: 28px;
           }
 
-          .quote {
-            font-size: 16px;
-          }
-
           .divider {
             width: 180px;
+          }
+
+          .banner {
+            margin-bottom: 48px;
+          }
+
+          .bannerImageWrap {
+            aspect-ratio: 4 / 5;
+          }
+
+          .bannerQuote {
+            font-size: 17px;
           }
 
           .split {
@@ -281,12 +354,20 @@ export default function AboutPage() {
             margin-bottom: 48px;
           }
 
+          .split.designer {
+            margin-bottom: 0;
+          }
+
           /* image always on top, text always below on mobile */
           .imageCol {
             order: 1;
           }
           .textCol {
             order: 2;
+          }
+
+          .imageWrap.portrait {
+            aspect-ratio: 4 / 3;
           }
 
           .heading {

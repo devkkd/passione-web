@@ -29,21 +29,21 @@ import Image from "next/image";
 const FONT_FAMILY = '"Montserrat", "Helvetica Neue", Arial, sans-serif';
 
 const DEFAULT_GEMS = [
-  { id: 1, image: "/gem/1.png",  name: "Citrine",         trait: "Opportunity" },
-  { id: 2, image: "/gem/2.png",  name: "Smoky",           trait: "Presence" },
-  { id: 3, image: "/gem/3.png",  name: "Blue Topaz",      trait: "Purpose" },
-  { id: 4, image: "/gem/4.png",  name: "Tourmaline",      trait: "Purpose" },
-  { id: 5, image: "/gem/5.png",  name: "Opal",            trait: "Inner Glow" },
-  { id: 6, image: "/gem/6.png",  name: "Garnet",          trait: "Drive" },
-  { id: 7, image: "/gem/7.png",  name: "Green Amethyst",  trait: "Spontaneity" },
+  { id: 1, image: "/gem/1.png", name: "Citrine", },
+  { id: 2, image: "/gem/2.png", name: "Smoky", },
+  { id: 3, image: "/gem/3.png", name: "Blue Topaz", },
+  { id: 4, image: "/gem/4.png", name: "Tourmaline", },
+  { id: 5, image: "/gem/5.png", name: "Opal", },
+  { id: 6, image: "/gem/6.png", name: "Garnet", },
+  { id: 7, image: "/gem/7.png", name: "Green Amethyst", },
 
-  { id: 8, image: "/gem/8.png",  name: "Peridot",         trait: "Sincerity" },
-  { id: 9, image: "/gem/9.png",  name: "Tsavorite",       trait: "Sensuality" },
-  { id: 10, image: "/gem/10.png", name: "Pearl",          trait: "Inner Glow" },
-  { id: 11, image: "/gem/11.png", name: "Lemon Quartz",   trait: "Individuality" },
-  { id: 12, image: "/gem/12.png", name: "Rhodolite",      trait: "Magnetism" },
-  { id: 13, image: "/gem/13.png", name: "Iolite",         trait: "Sincerity" },
-  { id: 14, image: "/gem/14.png", name: "Sapphire",       trait: "Audacity" },
+  { id: 8, image: "/gem/8.png", name: "Peridot", },
+  { id: 9, image: "/gem/9.png", name: "Tsavorite", },
+  { id: 10, image: "/gem/10.png", name: "Pearl", },
+  { id: 11, image: "/gem/11.png", name: "Lemon Quartz", },
+  { id: 12, image: "/gem/12.png", name: "Rhodolite", },
+  { id: 13, image: "/gem/13.png", name: "Iolite", },
+  { id: 14, image: "/gem/14.png", name: "Sapphire", },
 ];
 
 export default function SignatureGem({ gems = DEFAULT_GEMS, title = "YOUR SIGNATURE POWER GEM" }) {

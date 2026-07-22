@@ -43,11 +43,12 @@ export default function Hero() {
       <div className="hero-overlay" />
 
       <div className="hero-content">
-        <h1 className="hero-heading">Handcrafted in Thailand&apos;s Ancient Gem Capital</h1>
+        <h1 className="hero-heading">Crafted by Nature & Refined by Hand</h1>
 
         <p className="hero-text">
-          From The River-smoothed Sapphires Of Chanthaburi To The Amber-hued Topazes Of Mae Sai
-          Each Gemstone Tells The Story Of A Land Alive With Colour.
+          Rooted in Thailand’s storied gemstone heritage, each creation begins with a stone of
+distinctive light, colour and character. Guided by the hands of skilled artisans, each stone is
+transformed into a distinctive jewel where timeless craftsmanship meets modern elegance.
         </p>
 
         <a href="/shop-by/new-arrivals" className="hero-cta">

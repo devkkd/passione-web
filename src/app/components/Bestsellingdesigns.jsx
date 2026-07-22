@@ -26,7 +26,7 @@ const SERIF_FONT = '"Times New Roman", Times, serif';
 
 export default function BestSellingDesigns({
   heading = "Best Selling Designs",
-  description = "Explore our most loved treasures, crafted to captivate. These top picks shine with elegance, lighting up your moments.",
+  description = "A curated selection of our most coveted creations, celebrated for their distinctive gemstones, refined craftsmanship and timeless elegance.",
   ctaLabel = "SHOP NOW",
   ctaHref = "/shop-by/bestsellers",
 }) {

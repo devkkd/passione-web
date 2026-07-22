@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "Passion Jewellery",
+  title: "Passion Gioielli",
   description: "Luxury Jewellery Store",
 };
 
