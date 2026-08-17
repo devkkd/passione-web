@@ -49,7 +49,7 @@ export default function BehindFounder() {
 
           <div className="bf-sketch-wrap">
             <Image
-              src="/home/34.png"
+              src="/home/37.png"
               alt="Jewellery sketches"
               width={400}
               height={340}
@@ -62,7 +62,7 @@ export default function BehindFounder() {
         <div className="bf-right">
           <div className="bf-photo-wrap">
             <Image
-              src="/home/32.png"
+              src="/home/36.png"
               alt="Mukesh Khanchandani crafting jewellery"
               fill
               className="bf-photo-main"

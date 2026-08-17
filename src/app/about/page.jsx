@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="banner">
         <div className="bannerImageWrap">
           <Image
-            src="/about/7.jpg"
+            src="/about/8.png"
             alt="Behind Passione Gioielli — designer at work"
             fill
             sizes="100vw"
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="imageCol order-image-first">
           <div className="imageWrap">
             <Image
-              src="/about/4.jpg"
+              src="/about/9.png"
               alt="Hand-sketched jewellery designs in a studio notebook"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -89,7 +89,7 @@ export default function AboutPage() {
         <div className="imageCol order-image-first">
           <div className="imageWrap">
             <Image
-              src="/about/5.jpg"
+              src="/about/10.png"
               alt="Designer setting gemstones by hand"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -133,11 +133,11 @@ export default function AboutPage() {
         <div className="imageCol order-image-first">
           <div className="imageWrap portrait">
             <Image
-              src="/about/6.jpg"
+              src="/about/11.png"
               alt="Mukesh Khanchandani, Founder and Creative Director of Passione Gioielli"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
         </div>

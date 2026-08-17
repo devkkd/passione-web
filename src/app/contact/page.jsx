@@ -47,7 +47,7 @@ export default function ContactPage() {
 
       <section className="contactHero">
         <Image
-          src="/contact.png"
+          src="/contact1.png"
           alt="Passione Jewelry Contact"
           width={1920}
           height={900}

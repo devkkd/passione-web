@@ -234,7 +234,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Rings",
     pageTitle: "Rings",
-    heroImage: "/rings1.png",
+    heroImage: "/rings2.png",
     description:
       "Inspired by the natural world and refined through thoughtful craftsmanship, our rings are a study in balance where organic forms meet modern design. Each piece is carefully sculpted to feel effortless yet distinctive, capturing subtle details that reveal themselves over time. Whether worn as a personal signature or layered for a more expressive look, these rings are created to move with you quietly elevating the everyday while holding lasting meaning.",
     products: buildRingProducts(12),
@@ -246,7 +246,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Earrings",
     pageTitle: "Earrings",
-    heroImage: "/earings1.png",
+    heroImage: "/earings2.png",
     description:
       "Inspired by the fluid beauty of nature, our earrings are designed to bring light, movement, and refinement to every moment. Each piece reflects a harmony of organic forms and precise craftsmanship resulting in silhouettes that feel both modern and timeless. Whether subtle or statement, these earrings are created to elevate your everyday with quiet sophistication and enduring style.",
     products: buildEarringProducts(12),
@@ -258,7 +258,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Pendants",
     pageTitle: "Pendants",
-    heroImage: "/pendants.png",
+    heroImage: "/pendants1.png",
     description:
       "Inspired by nature’s quiet elegance, our pendants are crafted to capture beauty in its most refined form. Each piece reflects a balance of organic inspiration and thoughtful design resulting in jewellery that feels both effortless and intentional. Worn close to the heart, these pendants become more than adornment they carry sentiment, individuality, and a sense of timeless luxury.",
     products: buildPendantProducts(12),
@@ -270,7 +270,7 @@ export const shopByPages = [
     navGroup: "TYPE",
     navLabel: "Bangles",
     pageTitle: "Bangles",
-    heroImage: "/bangles.png",
+    heroImage: "/bengales1.png",
     description:
       "Inspired by the natural flow of organic shapes, our bangles are designed as continuous expressions of form and balance. Each piece is thoughtfully crafted to feel both structured and fluid, bringing together modern design with timeless appeal. Worn alone or layered, these bangles add a quiet statement of sophistication, elevating everyday moments with refined simplicity.",
     products: buildBangleProducts(12),
