@@ -66,7 +66,7 @@ export default function ContactPage() {
 
 <p className="contactDescription">
   We'd love to hear from you. Whether you have a question, a custom request,
-  or need assistance, our team is here to help.
+  or need assistance, our team is here to helps.
 </p>
                      <div className="contactWrapper">
 
