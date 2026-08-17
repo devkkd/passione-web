@@ -1063,6 +1063,7 @@ export default function Header({ isHome = true }) {
             width: 110px;
             height: auto;
           }
+          
         }
       `}</style>
     </header>
