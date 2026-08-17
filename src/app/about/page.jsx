@@ -373,6 +373,7 @@ export default function AboutPage() {
           .heading {
             font-size: 22px;
           }
+          
         }
       `}</style>
     </main>
