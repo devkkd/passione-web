@@ -758,5 +758,6 @@ export default function AccountPage() {
         }
       `}</style>
     </main>
+    
   );
 }
